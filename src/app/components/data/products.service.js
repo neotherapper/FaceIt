@@ -16,7 +16,7 @@
      * @memberOf Factories
      */
     /* @ngInject */
-    function Products() {
+    function Products($q) {
 
         var service = {
             get: get
@@ -98,8 +98,7 @@
                 }
             ];
 
-            // return common.$q.when(data);
-            return data;
+            return $q.when(data);
         }
 
     }
