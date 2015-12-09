@@ -1,8 +1,21 @@
 {
   "name": "faceIt",
   "version": "0.0.0",
+  "description": "AngularJS FaceIT Test application",
+  "authors": [
+    "George Pilitsoglou"
+  ],
+  "license": "UNLICENSED",
+  "private": "true",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/neotherapper/FaceIt"
+  },
   "dependencies": {},
   "scripts": {
+    "init": "npm install",
+    "install": "bower install",
+    "start": "gulp serve",
     "test": "gulp test"
   },
   "devDependencies": {
