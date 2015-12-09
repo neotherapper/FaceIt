@@ -1,0 +1,11 @@
+<div id="product">
+    <button class="btn btn-default pull-right" ng-click="vm.addProduct()">Add New</button>
+    <h1 class="product__header">
+        Product List
+    </h1>
+
+    <div class="col-sm-6"
+        ng-repeat="product in vm.products | orderBy:'score'">
+        <fc-product data="product" whensaved="vm.saveProduct"></fc-product>
+    </div>
+</div>
