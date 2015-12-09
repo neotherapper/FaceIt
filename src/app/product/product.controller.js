@@ -13,9 +13,10 @@
     function ProductController(Product, products) {
         var vm = this;
 
-        vm.addProduct   = addProduct;
-        vm.products     = products;
-        vm.saveProduct  = saveProduct;
+        vm.addProduct       = addProduct;
+        vm.deleteProduct    = deleteProduct;
+        vm.products         = products;
+        vm.saveProduct      = saveProduct;
 
         activate();
 
@@ -30,10 +31,31 @@
 
         }
 
+        /**
+         * @name addProduct
+         * @desc Function to add a new product to the view
+         * @memberOf Controllers.ProductController
+         */
         function addProduct() {
             Product.add();
         }
 
+        /**
+         * @name deleteProduct
+         * @desc Function to delete a specific product
+         * @param {Object} product
+         * @memberOf Controllers.ProductController
+         */
+        function deleteProduct(product) {
+            Product.del(product);
+        }
+
+        /**
+         * @name saveProduct
+         * @desc Function to save a specific product
+         * @param {Object} product
+         * @memberOf Controllers.ProductController
+         */
         function saveProduct(product){
             Product.save(product);
         }

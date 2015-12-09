@@ -5,7 +5,10 @@
     </h1>
 
     <div class="col-sm-6"
-        ng-repeat="product in vm.products | orderBy:'score'">
-        <fc-product data="product" whensaved="vm.saveProduct"></fc-product>
+        ng-repeat="product in vm.products | orderBy:'-score'">
+        <fc-product data="product"
+            whensaved="vm.saveProduct"
+            whendeleted="vm.deleteProduct">
+        </fc-product>
     </div>
 </div>
