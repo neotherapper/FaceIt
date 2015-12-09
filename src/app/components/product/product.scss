@@ -1,0 +1,44 @@
+input[type=text] {
+	width: 70%;
+	padding: 3px;
+}
+
+textarea {
+	width: 70%;
+}
+
+.panel-body b {
+	margin-right: 10px;
+}
+
+.list-group-item {
+	height: 52px;
+	&.textarea {
+		height: 120px;;
+	}
+}
+
+.panel-footer {
+	position:static;
+	height: 150px;
+	padding: 10px 10px;
+}
+
+.metascore {
+    font-size: 42px;
+    background-color: #6c3;
+	vertical-align: middle;
+    text-align: center;
+    color: #fff;
+    font-family: Arial,Helvetica,sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+	float: right;
+}
+
+.no-padding {
+	padding: 0;
+}

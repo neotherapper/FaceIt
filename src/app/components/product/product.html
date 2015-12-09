@@ -1,0 +1,76 @@
+<div class="panel panel-success">
+	<div class="panel-heading">
+		<h3 class="panel-title">
+				{{vm.product.title}}
+			</h3>
+	</div>
+
+	<div class="panel-body">
+
+		<ul class="list-group">
+			<li class="list-group-item textarea">
+				<b>Summary:</b>
+				<span ng-hide="vm.productEdited">
+					{{vm.product.summary}}
+				</span>
+				<textarea rows="3" ng-show="vm.productEdited" ng-model="vm.product.summary"></textarea>
+			</li>
+			<li class="list-group-item">
+				<b>Developer:</b>
+				<span ng-hide="vm.productEdited">
+					{{vm.product.developer}}
+				</span>
+				<input type="text" ng-show="vm.productEdited" ng-model="vm.product.developer">
+			</li>
+			<li class="list-group-item">
+				<b>Rating:</b>
+				<span ng-hide="vm.productEdited">
+					{{vm.product.rating}}
+				</span>
+				<input type="text" ng-show="vm.productEdited" ng-model="vm.product.rating">
+			</li>
+			<li class="list-group-item">
+				<b>Critics Score:</b>
+				<span ng-hide="vm.productEdited">
+					{{vm.product.score}}
+				</span>
+				<input type="number" ng-show="vm.productEdited" ng-model="vm.product.score">
+			</li>
+			<li class="list-group-item">
+				<b>User Score:</b>
+				<span ng-hide="vm.productEdited">
+					{{vm.product.uscore}}
+				</span>
+				<input type="number" ng-show="vm.productEdited" ng-model="vm.product.uscore">
+			</li>
+
+			<li class="list-group-item">
+				<b>Title:</b>
+				<span ng-dblclick="vm.editProduct('uscore')" ng-hide="vm.productEdited">
+					{{vm.product.title}}
+				</span>
+				<input type="text" ng-show="vm.productEdited" ng-model="vm.product.title">
+			</li>
+		</ul>
+		<button class="btn btn-primary" ng-click="vm.editProduct()" ng-hide="vm.productEdited">Edit</button>
+		<button class="btn btn-success" ng-click="vm.saveProduct()" ng-show="vm.productEdited">Save</button>
+		<button class="btn btn-danger pull-right" ng-click="vm.removeProduct()">Delete</button>
+	</div>
+	<div class="panel-footer">
+<!--
+		<span class="photo">
+			<fc-product-photo data="::vm.product"></fc-product>
+		</span>
+		<span>{{vm.product.summary}}</span>-->
+
+		<div class="col-xs-2 no-padding">
+			<div class="inline">
+				<fc-product-photo data="::vm.product"></fc-product>
+			</div>
+		</div>
+		<div class="col-xs-8 no-padding">{{vm.product.summary}}</div>
+		<div class="col-xs-2 no-padding metascore">{{vm.product.score}}</div>
+
+	</div>
+
+</div>
