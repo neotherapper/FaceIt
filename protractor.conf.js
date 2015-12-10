@@ -9,8 +9,19 @@ exports.config = {
   //seleniumServerJar: deprecated, this should be set on node_modules/protractor/config.json
 
   // Capabilities to be passed to the webdriver instance.
-  capabilities: {
-    'browserName': 'chrome'
+
+  multiCapabilities: [{
+    browserName: 'firefox'
+  }, {
+    browserName: 'chrome'
+  }],
+
+//   capabilities: {
+//     'browserName': 'chrome'
+//   },
+
+  onPrepare: function() {
+    browser.manage().window().setSize(1200, 1000);
   },
 
   baseUrl: 'http://localhost:3000',
