@@ -14,7 +14,7 @@
   "dependencies": {},
   "scripts": {
     "init": "npm install",
-    "install": "bower install",
+    "install": "bower install && tsd install -r -o --save-dev",
     "start": "gulp serve",
     "test": "gulp test"
   },
