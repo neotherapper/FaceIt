@@ -8,14 +8,8 @@
   /** @ngInject */
   function routerConfig($stateProvider, $urlRouterProvider) {
     $stateProvider
-      .state('home', {
-        url: '/',
-        templateUrl: 'app/main/main.html',
-        controller: 'MainController',
-        controllerAs: 'main'
-      })
       .state('products', {
-        url: '/products',
+        url: '/',
         templateUrl: 'app/product/product.html',
         controller: 'ProductController',
         controllerAs: 'vm',

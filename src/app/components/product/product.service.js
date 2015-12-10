@@ -74,9 +74,8 @@
 			Products.get()
 				.then(function(response){
                     // Clone the original products because we do not want to change it.
-		            products = angular.extend([], response);
-                    console.log(products);
-					deferred.resolve(products);
+                    products = angular.extend([], response);
+                    deferred.resolve(products);
 				})
 				.catch(function(error){
 					deferred.reject(error);

@@ -35,7 +35,7 @@
         return directive;
     }
 
-    function link(scope, ele, attr){
+    function link(){
 
     }
 
@@ -45,7 +45,7 @@
      * @memberOf Controllers
      */
     /* @ngInject */
-    function ProductController($scope) {
+    function ProductController() {
 
         var vm = this;
 
@@ -66,7 +66,7 @@
 			vm.product = vm.data;
         }
 
-        function editProduct(property) {
+        function editProduct() {
             vm.productEdited = true;
 
         }

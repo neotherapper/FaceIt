@@ -33,8 +33,7 @@
         return directive;
     }
 
-    function link(scope, ele, attr){
-
+    function link(){
     }
 
     /**
@@ -43,7 +42,7 @@
      * @memberOf Controllers
      */
     /* @ngInject */
-    function ProductPhotoController($scope) {
+    function ProductPhotoController() {
 
         var vm = this;
 
@@ -63,7 +62,6 @@
                 if(vm.data.photo){
                     vm.photo.src = photoSrc + vm.data.photo;
                 }else{
-                    console.log('lol');
                     vm.photo.src = getEmptyPhotoSrc();
                 }
                 vm.photo.alt    = 'Photo of ' + vm.data.title;
@@ -79,7 +77,6 @@
         function getEmptyPhotoSrc(){
 
             var photoSrc = '../../assets/images/';
-
 			photoSrc += 'no_image.jpeg';
 
             return photoSrc;

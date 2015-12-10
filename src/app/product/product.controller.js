@@ -28,7 +28,7 @@
          * @memberOf Controllers.ProductController
          */
         function activate() {
-
+            document.title = 'Product View';
         }
 
         /**
