@@ -6,10 +6,10 @@
 'use strict';
 
 var ProductPage = function() {
-  this.jumbEl = element(by.css('.jumbotron'));
-  this.h1El = this.jumbEl.element(by.css('h1'));
-  this.imgEl = this.jumbEl.element(by.css('img'));
-  this.thumbnailEls = element(by.css('body')).all(by.repeater('awesomeThing in main.awesomeThings'));
+  this.prEl = element(by.css('.product'));
+  this.h1El = this.prEl.element(by.css('h1'));
+  this.addButton = this.prEl.element(by.id('add'));
+  this.productEls = element(by.css('body')).all(by.repeater('product in vm.products'));
 };
 
 module.exports = new ProductPage();
