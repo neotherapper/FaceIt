@@ -18,12 +18,26 @@
         expect(Products.get).not.toEqual(null);
       });
 
-      it('should return array of object', function() {
+      it('should eventually return array of object', inject(function($rootScope) {
         var data = Products.get();
-        expect(data).toEqual(jasmine.any(Array));
-        expect(data[0]).toEqual(jasmine.any(Object));
-        expect(data.length > 5).toBeTruthy();
-      });
+        var resolvedValue;
+
+        expect(data).toBeDefined();
+
+        data.then(function(value){
+            resolvedValue = value;
+        });
+
+        // Propagate promise resolution to 'then' functions using $apply().
+        $rootScope.$apply();
+        expect(resolvedValue).toEqual(jasmine.any(Array));
+        expect(resolvedValue[0]).toEqual(jasmine.any(Object));
+        expect(resolvedValue.length > 5).toBeTruthy();
+
+      }));
+
+
+
     });
   });
 })();

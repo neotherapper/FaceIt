@@ -2,18 +2,21 @@
   'use strict';
 
   describe('Product controller', function(){
-    var vm;
+      var vm;
+      beforeEach(module('faceIt'));
 
-    beforeEach(module('faceIt'));
-    beforeEach(inject(function(_$controller_, _Product_, _toastr_) {
-      spyOn(_Product_, 'get').and.returnValue([{}, {}, {}, {}, {}]);
+    // Initialize the controller and a mock scope
+    beforeEach(inject(function(_$controller_) {
 
-      vm = _$controller_('ProductController');
+        vm = _$controller_('ProductController', {
+                products: [{},{},{},{},{},{}]
+             });
     }));
 
-    it('should define more than 5 products', function() {
-      expect(angular.isArray(vm.products)).toBeTruthy();
-      expect(vm.products.length === 5).toBeTruthy();
-    });
+    it('should define 6 products', inject(function() {
+        expect(angular.isArray(vm.products)).toBeTruthy();
+        expect(vm.products.length === 6).toBeTruthy();
+    }));
+
   });
 })();
