@@ -80,3 +80,33 @@ Runs locally, no database required.
  * just for user feedback.
  * Normally we handle user feedback with nice message (similar to toastr approach)
  * Normally using toastr only on dev enviroment so we can have visual feedback for testing purposes.
+
+- Use of typings
+ * isn't always nice to have intelisense with your code?
+
+- JSHint
+
+- e2e testing happens on both chrome and firefox
+
+## Todo
+
+- Use of Bard at testing environment
+ * creates cleaner code
+
+- Add gulp serve:test to serve a test page that shows all tests.
+
+- Switch Mocha, chai, chai as promised, sinon
+ * not having experience with jasmine
+ * creates cleaner code (especially chai as promised)
+
+- Adding universal helpers
+ * error handlers
+ * route handlers
+ * logger handler
+
+- Adding a core folder that will have:
+ * 404.html
+ * config file
+ * constants
+
+- Revisit gulp to use webpack and add own style instead of angular-gulp generator's
