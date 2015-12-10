@@ -2,16 +2,26 @@
 Demonstrates Angular modularity, testing, Gulp task automation, and more.
 
 ## Structure
+	/bower_components
 	/build 	(created on the fly)
+	/e2e
 	/gulp
+	/node_modules
 	/src
-		/client
-			/app
-			/content
-			/test
-		/server
-			/data
-			/routes
+		/app
+			/components
+				/data
+				/product
+				/product_photo
+			/product
+			index.scss
+			index.config.js
+			index.constants.js
+			index.module.ks
+			index.run.js
+		/assets
+			/images
+		index.html
 
 ## Requirements
 
@@ -42,3 +52,31 @@ Runs locally, no database required.
 - gulp test:auto` to run your unit tests with Karma in watch mode
 - gulp protractor` to launch your e2e tests with Protractor
 - gulp protractor:dist` to launch your e2e tests with Protractor on the dist files
+
+## Included
+- Page objects
+
+**Why?**
+  * They encapsulate information about the elements on the page under test
+  * Can be reused across multiple tests
+  * Decouple the test logic from implementation details
+
+- Unit Tests with Jasmine
+ *handling promises
+
+- 2 directives
+ * Product --> handles a single product view and logic
+ * product photo --> handles photo (case photo is missing)
+
+- App structure based on component
+ * Every component has it's own js html scss and tests under same folder.
+
+- Not persisting data
+ * App takes dummy data from data service and just stores edits deletes product data on a different service.
+ * Above means that on page refresh the app resets to Initial State.
+ * Normally we either use locageStorage or REST for CRUD operations.
+
+- Use of Toastr
+ * just for user feedback.
+ * Normally we handle user feedback with nice message (similar to toastr approach)
+ * Normally using toastr only on dev enviroment so we can have visual feedback for testing purposes.
